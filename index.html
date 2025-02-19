@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Challenge</title>
+    <!-- tailwind cnn link -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- daisyUI cdn link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .raleway {
+        font-family: "Raleway", serif;
+      }
+
+      .playfair-display {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+    <!-- tailwind custom -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header class="">
+      <nav class="flex items-center justify-center fixed w-full z-20 top-0 ">
+        <div
+          class="navbar md:p-3  absolute z-20 bg-[#00000066] backdrop-blur-sm w-4/6 rounded-full lg:top-4 top-3"
+        >
+          <div class="navbar-start">
+            <a class="btn btn-ghost text-xl"
+              ><img src="image/logo.png" alt="" class="w-20 h-7"
+            /></a>
+          </div>
+          <div class="navbar-center hidden lg:flex  text-white">
+            <ul class="menu menu-horizontal px-1">
+              <li class=" hover:text-[#FFDE21]"><a>Home</a></li>
+              <li class=" hover:text-[#FFDE21]"><a>Properties</a></li>
+              <li class=" hover:text-[#FFDE21]"><a>About US</a></li> 
+              <li class=" hover:text-[#FFDE21]"><a>Contact US</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end ">
+            <div class=" lg:flex items-center space-x-2">
+              <a><i class="fa-solid text-[#FFDE21]   cursor-pointer fa-magnifying-glass"></i></a>
+             <a class="hidden lg:flex text-white cursor-pointer hover:text-[#FFDE21] ">Login</a>
+                <a class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 hidden lg:flex cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0]"
+                  >Button</a
+                >
+              </div>
+            </div>
+            <!-- menu bar -->
+            <div class="dropdown">
+              <div
+                tabindex="0"
+                role="button"
+                class="lg:hidden text-end bg-[#FFDE21] rounded-full flex items-center justify-center py-2 px-2"
+              >
+                <i class="fa-solid w-4 h-4 fa-bars"></i>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 text-white"
+              >
+                <li><a>Home</a></li>
+                <li><a>Properties</a></li>
+                <li><a>About US</a></li>
+                <li><a>Contact US</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="carousel w-full max-h-[700px] relative">
+        <!-- Item 1 -->
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="image/house-isolated-field 1.png" class="w-full " />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide4" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="image/img1.png" class="w-full" />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="image/img2.png" class="w-full" />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div id="slide4" class="carousel-item relative w-full">
+          <img src="image/img3.png" class="w-full" />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
+      <!-- content section -->
+     <div class=" lg:flex lg:justify-between  lg:w-full  absolute bottom-32 items-center  ">
+      <div class="space-y-7 lg:pl-16 ">
+        <h2 class="font-semibold lg:text-6xl text-2xl  text-[#FFFFFF] text-playfair-display">Own Your <span class="text-[#FFDE21]">world,</span><br>
+          one property at a time</h2>
+          <div class="flex lg:gap-20 gap-5 items-center bg-[#00000066] backdrop-blur-sm rounded-2xl lg:py-6 py-3 lg:px-7 px-4 ">
+            <form class="space-y-4">
+              <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Property Type</label>
+              <select id="countries" class="text-[#FFFFFF] rounded-lg outline-none block font-semibold  cursor-pointer">
+                <option  selected >Select</option>
+                <option  value="US">Select 1</option>
+                <option value="CA">Select 2</option>
+                <option value="FR">Select 3</option>
+                <option value="DE">Select 4</option>
+              </select>
+            </form>
+            <form class="space-y-4">
+              <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Price range </label>
+              <select id="countries" class="text-[#FFFFFF] rounded-lg outline-none block font-semibold  cursor-pointer">
+                <option selected>Select</option>
+                <option value="US">Select 1</option>
+                <option value="CA">Select 2</option>
+                <option value="FR">Select 3</option>
+                <option value="DE">Select 4</option>
+              </select>
+            </form>
+            <form class="space-y-4 ">
+              <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Location</label>
+              <select id="countries" class="text-[#FFFFFF]  rounded-lg outline-none block font-semibold  cursor-pointer">
+                <option selected>Select</option>
+                <option value="US">Select 1</option>
+                <option value="CA">Select 2</option>
+                <option value="FR">Select 3</option>
+                <option value="DE">Select 4</option>
+              </select>
+            </form>
+            <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm  font-medium text-gray-900  rounded-[50px] bg-[#FFDE21] hover:bg-[#a09d88b0] hover:text-[#FFDE21] "><i class="fa-solid mr-2  fa-magnifying-glass"></i>Search</button>
+            
+          </div>       
+      </div>
+      <div class="">
+        <p class="text-[#FFFFFF] lg:text-base text-xs">Take control of your future, one property at a time. <br> Build your dreams, secure investments, and shape <br> your world with ease and confidence.</p>
+      </div>
+     </div>
+    </header>
+    <main>
+      <section class="py-[clamp(30px,2vw,80px)]">
+        <div class="lg:flex justify-between px-[clamp(20px,2vw,60px)]">
+          <h2 class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)]  text-[#333333] text-playfair-display">Features Properties <span class="text-[#21C700]">property</span>
+            From <br> Around th globe </h2>
+            <p>Lorem Ipsum consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco.</p>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
