@@ -342,7 +342,7 @@
 </div>
 
       </section>
-
+      <!-- dashboard section  -->
      <section>
       <div class="md:flex md:justify-between  lg:p-0 p-5 ">
         <h2 class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)]  text-[#333333] text-playfair-display">Your Trusted Real <br> Estate <span class="text-[#21C700]">Advisors</span>
@@ -381,6 +381,333 @@
           </div>
         </div>
       </section>
+     </section>
+     <section class="mt-20 flex gap-5 ">
+      <!-- filter section  -->
+     <div class="bg-[#0000000A] p-5 h-fit rounded-xl lg:flex hidden">
+      
+      <div>
+        <div>
+          <h3 class="font-medium text-lg text-[#7F7F7F]">Filter</h3>
+          
+<h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Property Type</h3>
+<ul class=" text-base font-medium text-gray-900">
+  <!-- item 1 -->
+    <li class=" w-fit">
+        <div class="flex items-center ps-3">
+            <input id="vue-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+            <label for="vue-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Office Space</label>
+        </div>
+    </li>
+    <!-- item 2 -->
+    <li class="w-fit ">
+        <div class="flex items-center ps-3">
+            <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 ">
+            <label for="react-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Warehouse</label>
+        </div>
+    </li>
+    <!-- item 3 -->
+    <li class="w-fit">
+        <div class="flex items-center ps-3">
+            <input id="angular-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+            <label for="angular-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Retail Store</label>
+        </div>
+    </li>
+    <!-- item 4 -->
+    <li class="w-fit">
+        <div class="flex items-center ps-3">
+            <input id="laravel-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+            <label for="laravel-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Industrial</label>
+        </div>
+    </li>
+</ul>
+
+        </div>
+        <hr class="my-4">
+       <div class="space-y-4">
+        <div>
+          <label for="small-range" class="block mb-2 text-lg font-medium text-gray-900">Price Range</label>
+          <input type="range" min="0" max="100" value="40" class="range [--range-shdw:#FFDE21] w-[290px]" />
+          <p class="flex gap-56"><span>$0</span>
+            <span>$10,000</span></p>
+        </div>
+        <div>
+          <label for="small-range" class="block mb-2 text-lg font-medium text-gray-900">Space Size</label>
+          <input type="range" min="0" max="100" value="40" class="range [--range-shdw:#FFDE21] w-[290px]" />
+          <p class="flex gap-52"><span>0 m²</span>
+            <span>1000 m²</span></p>
+        </div>
+       </div>
+       <hr class="my-4">
+       <div>
+          
+        <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Amenities</h3>
+        <ul class=" text-base font-medium text-gray-900">
+          <!-- item 1 -->
+            <li class=" w-fit">
+                <div class="flex items-center ps-3">
+                    <input id="vue-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+                    <label for="vue-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Parking</label>
+                </div>
+            </li>
+            <!-- item 2 -->
+            <li class="w-fit ">
+                <div class="flex items-center ps-3">
+                    <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 ">
+                    <label for="react-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">24/7 Access</label>
+                </div>
+            </li>
+            <!-- item 3 -->
+            <li class="w-fit">
+                <div class="flex items-center ps-3">
+                    <input id="angular-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+                    <label for="angular-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Air Conditioning</label>
+                </div>
+            </li>
+            <!-- item 4 -->
+            <li class="w-fit">
+                <div class="flex items-center ps-3">
+                    <input id="laravel-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+                    <label for="laravel-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Security System</label>
+                </div>
+            </li>
+        </ul>
+            <button class="btn bg-[#FFDE21]  cursor-pointer w-full mt-24 rounded-full r hover:text-[#FFDE21] hover:bg-[#a09d88b0]">Apply</button>
+                </div>
+      </div>
+     </div>
+     <!-- card section -->
+     <div class="w-full">
+      <div class="flex justify-between">
+        <div>
+          <button class="btn"><i class="fa-solid fa-table-cells-large"></i></button>
+        <button class="btn"><i class="fa-solid fa-list"></i></button>
+        </div>
+        <div class="flex gap-3 ">
+          <form class="">
+            
+            <select id="countries" class="bg-gray-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-3">
+              <option selected>Area Location</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+            </select>
+          </form>
+          <form class="">
+            
+            <select id="countries" class="bg-gray-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-3">
+              <option selected>Sort by </option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+            </select>
+          </form>
+          </div>
+      </div>
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 mt-8  ">        
+      <!-- care-1  -->
+        <div class=" bg-white border  w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700  relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full " src="image/img1.png" alt=""  />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2 ">Office</button>
+          
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group "></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+       <!-- card-2  -->
+        <div class=" bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">Warehouse</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card-3  -->
+        <div class="  bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img3.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">Production</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card-4  -->
+        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card-5  -->
+        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card 6 -->
+        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card-7  -->
+        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card-8  -->
+        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+        <!-- card 9 -->
+        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
+          <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+          </a>
+          <div class="p-4">
+             <div class="flex justify-between items-center"> 
+              <a href="#">
+              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
+          </a>
+          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
+        </div>
+              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
+              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
+              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
      </section>
     </main>
     <footer></footer>
