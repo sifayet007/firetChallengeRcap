@@ -151,14 +151,14 @@
         </div>
       </div>
       <!-- content section -->
-    <div class=" md:flex   p-5  absolute lg:bottom-24 bottom-[305px] md:bottom-5 items-center  ">
+    <div class=" md:flex w-full justify-between  p-5  absolute lg:bottom-24 bottom-[305px] md:bottom-5 items-center  ">
       <div class="space-y-7 lg:pl-16  ">
         <h2 class="font-semibold lg:text-6xl text-2xl  text-[#FFFFFF] text-playfair-display">Own Your <span class="text-[#FFDE21]">world,</span><br>
           one property at a time</h2>
           <div class="flex lg:gap-20 gap-4 items-center bg-[#00000066] backdrop-blur-sm  rounded-2xl lg:py-6 py-3 lg:px-7 px-3 ">
             <form class="space-y-4">
               <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Property Type</label>
-              <select id="countries" class="text-[#FFFFFF] rounded-lg outline-none block font-semibold  cursor-pointer">
+              <select id="countries" class="text-[#FFFFFF] rounded-lg  outline-none block font-semibold  cursor-pointer">
                 <option  selected >Select</option>
                 <option  value="US">Select 1</option>
                 <option value="CA">Select 2</option>
@@ -351,19 +351,19 @@
       </div>
       <section class="lg:flex lg:justify-between mt-14">
         <div class="grid grid-cols-2 gap-5">
-          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 ">
-            <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">50K+</h3>
+          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl ">
+            <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333] ">50K+</h3>
             <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">Satisfied Customer</p>
           </div>
-          <div class="bg-[#FFDE21] lg:p-8 p-4 lg:space-y-8 space-y-3">
+          <div class="bg-[#FFDE21] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl">
             <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">10+</h3>
             <p class="text-[clamp(12px,4vw,20px)] text-[#333333] font-medium">Years Of Experience</p>
           </div>
-          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3">
+          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl">
             <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">112+</h3>
             <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">Award winning</p>
           </div>
-          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3">
+          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl">
             <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">1200+</h3>
             <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">Property Collection</p>
           </div>
@@ -428,13 +428,13 @@
         <div>
           <label for="small-range" class="block mb-2 text-lg font-medium text-gray-900">Price Range</label>
           <input type="range" min="0" max="100" value="40" class="range [--range-shdw:#FFDE21] w-[290px]" />
-          <p class="flex gap-56"><span>$0</span>
+          <p class="flex justify-between"><span>$0</span>
             <span>$10,000</span></p>
         </div>
         <div>
           <label for="small-range" class="block mb-2 text-lg font-medium text-gray-900">Space Size</label>
           <input type="range" min="0" max="100" value="40" class="range [--range-shdw:#FFDE21] w-[290px]" />
-          <p class="flex gap-52"><span>0 m²</span>
+          <p class="flex justify-between"><span>0 m²</span>
             <span>1000 m²</span></p>
         </div>
        </div>
@@ -480,8 +480,11 @@
      <div class="w-full">
       <div class="flex justify-between">
         <div class="space-x-3">
-          <button class="btn"><i class="fa-solid fa-table-cells-large"></i></button>
-        <button class="btn"><i class="fa-solid fa-list"></i></button>
+          <div class="hidden lg:flex gap-3">
+            <button class="btn "><i class="fa-solid  fa-table-cells-large"></i></button>
+        <button class="btn hidden lg:flex"><i class="fa-solid fa-list"></i></button>
+          </div>
+        <button class="btn  text-gray-900 p-3 hidden max-sm:flex"><i class="fa-solid fa-filter"></i> Filter</button>
         </div>
         <div class="flex gap-3 ">
           <form class="">
@@ -506,7 +509,7 @@
           </form>
           </div>
       </div>
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 mt-8  ">        
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 lg:mt-8  ">        
       <!-- care-1  -->
         <div class=" bg-white border  w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700  relative">
           <a href="#">
@@ -707,7 +710,7 @@
           </div>
         </div>
       </div>
-      <div class="lg:flex justify-between mt-8">
+      <div class="lg:flex justify-between p-5 lg:mt-8">
         <!-- pagination section -->
         <div class="text-[#4C4C4C] text-lg"> <p>Showing 1-9 off 50 Spaces</p></div>
         <div>
@@ -746,7 +749,103 @@
       </div>
     </div>
      </section>
+     <!-- banner section  -->
+      <section> 
+        <div>
+          <div class="md:flex md:justify-between lg:p-0 p-5 ">
+            <h2 class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)]  text-[#333333] text-playfair-display">International <br> <span class="text-[#21C700]">Property </span>
+              Network </h2>
+              <p>Lorem Ipsum consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco.</p>
+          </div>
+          <div class="mt-[clamp(30px,4vw,80px)]">
+            <img src="image/map.png" alt="">
+          </div>
+        </div>
+      </section>
+      <!-- Challenging section  -->
+       <section>
+        
+       </section>
     </main>
-    <footer></footer>
+    
+      
+
+<footer class="bg-[#333333] lg:px-36 lg:py-12 dark:bg-gray-900">
+  <div class="">
+    <div class="grid grid-cols-2 space-y-5 lg:gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+      <div class="space-y-6 lg:col-span-1 col-span-2">
+          <h2><img src="image/logo.png" alt=""></h2>
+          <p class="text-[#FFFFFF] md:text-base text-xs">Meet People is a revolutionary networking platform designed to transform how professionals connect.Join us on this journey to change the way people network.</p>
+          <div class="flex gap-3">
+            <a><img src="image/icon/Facebook.png" alt=""></a>
+            <a><img src="image/icon/Reddit.png" alt=""></a>
+            <a><img src="image/icon/YouTube.png" alt=""></a>
+            <a><img src="image/icon/WhatsApp.png" alt=""></a>
+            <a><img src="image/icon/Pinterest.png" alt=""></a>
+          </div>
+      </div>
+      <div>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-[#FFFFFF]">Quick Links</h2>
+          <ul class="text-[#FFFFFF] font-medium">
+              <li class="mb-4">
+                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Home</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Services</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> About us</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Contact</a>
+              </li>
+          </ul>
+      </div>
+      <div>
+          <h2 class="mb-6 text-sm font-semibold text-[#FFFFFF] uppercase">Quick Links</h2>
+          <ul class="text-[#FFFFFF] font-medium">
+            <li class="mb-4">
+                <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Privacy Policy</a>
+            </li>
+            <li class="mb-4">
+                <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Influencer Program</a>
+            </li>
+            <li class="mb-4">
+                <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> FAQ</a>
+            </li>
+            
+        </ul>
+      </div>
+      <div>
+          <h2 class="mb-6 text-sm font-semibold text-[#FFFFFF] uppercase">Contact</h2>
+          <ul class="text-[#FFFFFF]  font-medium">
+              <li class="mb-4 ">
+                  <a href="#" class="hover:underline flex items-center"><i class="fa-solid mr-3 fa-location-dot"></i>PO Box CT15468 West, Finland</a>
+              </li>
+              <li class="mb-4 ">
+                  <a href="#" class="hover:underline flex items-center"><i class="fa-solid mr-3 fa-envelope"></i>HELLO@EXPERTSQUAD.NET</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline"><i class="fa-solid mr-3 fa-phone-volume"></i>91+585-656-658</a>
+              </li>
+              
+          </ul>
+      </div>
+  </div>
+  <div class="px-4 py-6 bg-[#333333] md:flex md:items-center md:justify-between">
+      <span class="text-sm text-[#FFFFFF] dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+      </span>
+      <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+          <a><img src="image/icon/Method=ApplePay.png" alt=""></a>
+          <a><img src="image/icon/Method=Visa.png" alt=""></a>
+          <a><img src="image/icon/Method=Mastercard.png" alt=""></a>
+          <a><img src="image/icon/Method=Discover.png" alt=""></a>
+          <a><img src="image/icon/Cart.png" alt=""></a>
+           
+      </div>
+    </div>
+  </div>
+</footer>
+
   </body>
 </html>
