@@ -38,12 +38,15 @@
         font-family: "Playfair Display", serif;
       }
       .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;  /* IE & Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE & Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .menu-open {
+        display: block !important;
+      }
     </style>
     <!-- tailwind custom -->
     <script>
@@ -60,58 +63,84 @@
   </head>
   <body>
     <header class="">
-      <nav class="flex items-center justify-center fixed w-full z-20 top-0 ">
+      <nav
+        class="flex items-center justify-center fixed top-2 md:px-32 px-5 w-full z-20"
+      >
         <div
-          class="navbar md:p-3  absolute z-20 bg-[#00000066] backdrop-blur-sm w-4/6 rounded-full lg:top-4 top-3"
+          class="navbar px-5 z-20 bg-[#00000066] backdrop-blur-sm w-full rounded-full"
         >
           <div class="navbar-start">
-            <a class="btn btn-ghost text-xl"
-              ><img src="image/logo.png" alt="" class="w-20 h-7"
-            /></a>
+            <a class="p-0 text-xl">
+              <img
+                src="image/logo.png"
+                alt="Logo"
+                class="md:w-20 md:h-7 w-14 h-5"
+              />
+            </a>
           </div>
-          <div class="navbar-center hidden lg:flex  text-white">
-            <ul class="menu menu-horizontal px-1">
-              <li class=" hover:text-[#FFDE21]"><a>Home</a></li>
-              <li class=" hover:text-[#FFDE21]"><a>Properties</a></li>
-              <li class=" hover:text-[#FFDE21]"><a>About US</a></li> 
-              <li class=" hover:text-[#FFDE21]"><a>Contact US</a></li>
+
+          <!-- Desktop Menu -->
+          <div class="navbar-center hidden md:flex text-white">
+            <ul class="menu menu-horizontal *:font-semibold px-1 gap-3">
+              <li class="hover:text-[#FFDE21]"><a href="#">Home</a></li>
+              <li class="hover:text-[#FFDE21]"><a href="#">Properties</a></li>
+              <li class="hover:text-[#FFDE21]"><a href="#">About Us</a></li>
+              <li class="hover:text-[#FFDE21]"><a href="#">Contact Us</a></li>
             </ul>
           </div>
-          <div class="navbar-end ">
-            <div class=" lg:flex items-center space-x-2">
-              <a><i class="fa-solid text-[#FFDE21]   cursor-pointer fa-magnifying-glass"></i></a>
-             <a class="hidden lg:flex text-white cursor-pointer hover:text-[#FFDE21] ">Login</a>
-                <a class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 hidden lg:flex cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0]"
-                  >Button</a
-                >
-              </div>
+
+          <div class="navbar-end">
+            <div class="hidden lg:flex items-center space-x-3">
+              <a>
+                <i
+                  class="fa-solid fa-magnifying-glass text-[#FFDE21] cursor-pointer"
+                ></i>
+              </a>
+              <a class="text-white hover:text-[#FFDE21] cursor-pointer"
+                >Login</a
+              >
+              <a
+                class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 hover:bg-[#a09d88b0] hover:text-white cursor-pointer"
+                >Button</a
+              >
             </div>
-            <!-- menu bar -->
-            <div class="dropdown">
-              <div
-                tabindex="0"
-                role="button"
-                class="lg:hidden text-end bg-[#FFDE21] rounded-full flex items-center justify-center py-2 px-2"
+
+            <!-- Mobile menu toggle -->
+            <div class="lg:hidden ml-3">
+              <button
+                id="menuToggle"
+                class="bg-[#FFDE21] rounded-full p-2 flex items-center justify-center"
               >
-                <i class="fa-solid w-4 h-4 fa-bars"></i>
-              </div>
+                <i class="fa-solid fa-bars text-black"></i>
+              </button>
+
+              <!-- Mobile Dropdown Menu -->
               <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 text-white"
+                id="mobileMenu"
+                class="hidden absolute top-14 right-5 bg-white text-black rounded-xl w-52 p-4 shadow-md space-y-2 z-30"
               >
-                <li><a>Home</a></li>
-                <li><a>Properties</a></li>
-                <li><a>About US</a></li>
-                <li><a>Contact US</a></li>
+                <li><a href="#" class="hover:text-[#FFDE21]">Home</a></li>
+                <li><a href="#" class="hover:text-[#FFDE21]">Properties</a></li>
+                <li><a href="#" class="hover:text-[#FFDE21]">About Us</a></li>
+                <li><a href="#" class="hover:text-[#FFDE21]">Contact Us</a></li>
+                <li><a href="#" class="hover:text-[#FFDE21]">Login</a></li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 inline-block text-center hover:bg-[#a09d88b0]"
+                    >Button</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
+
       <div class="carousel w-full max-h-[700px] relative">
         <!-- Item 1 -->
         <div id="slide1" class="carousel-item relative w-full">
-          <img src="image/house-isolated-field 1.png" class="w-full " />
+          <img src="image/house-isolated-field 1.png" class="w-full" />
           <div
             class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
           >
@@ -151,24 +180,29 @@
         </div>
       </div>
       <!-- content section -->
-    <div class=" md:flex w-full justify-between  p-5  absolute lg:bottom-24 bottom-[305px] md:bottom-5 items-center  ">
-      <div class="space-y-7 lg:pl-16  ">
-        <h2 class="font-semibold lg:text-6xl text-2xl  text-[#FFFFFF] text-playfair-display">Own Your <span class="text-[#FFDE21]">world,</span><br>
-          one property at a time</h2>
-          <div class="flex lg:gap-20 gap-4 items-center bg-[#00000066] backdrop-blur-sm  rounded-2xl lg:py-6 py-3 lg:px-7 px-3 ">
+      <div
+        class="md:flex w-full justify-between gap-x-5 p-5 absolute lg:bottom-24 md:bottom-3 top-0 items-center"
+      >
+        <div class="space-y-7 lg:pl-16">
+          <h2
+            class="font-semibold lg:text-6xl text-2xl text-[#FFFFFF] text-playfair-display"
+          >
+            Own Your <span class="text-[#FFDE21]">world,</span><br />
+            one property at a time
+          </h2>
+          <div
+            class="flex lg:gap-20 gap-4 items-center bg-[#00000066] backdrop-blur-sm rounded-2xl lg:py-6 py-3 lg:px-7 px-3"
+          >
             <form class="space-y-4">
-              <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Property Type</label>
-              <select id="countries" class="text-[#FFFFFF] rounded-lg  outline-none block font-semibold  cursor-pointer">
-                <option  selected >Select</option>
-                <option  value="US">Select 1</option>
-                <option value="CA">Select 2</option>
-                <option value="FR">Select 3</option>
-                <option value="DE">Select 4</option>
-              </select>
-            </form>
-            <form class="space-y-4">
-              <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Price range </label>
-              <select id="countries" class="text-[#FFFFFF] rounded-lg outline-none block font-semibold  cursor-pointer">
+              <label
+                for="countries"
+                class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
+                >Property Type</label
+              >
+              <select
+                id="countries"
+                class="text-[#FFFFFF] rounded-lg outline-none block font-semibold cursor-pointer"
+              >
                 <option selected>Select</option>
                 <option value="US">Select 1</option>
                 <option value="CA">Select 2</option>
@@ -176,9 +210,16 @@
                 <option value="DE">Select 4</option>
               </select>
             </form>
-            <form class="space-y-4 ">
-              <label for="countries" class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white">Location</label>
-              <select id="countries" class="text-[#FFFFFF]  rounded-lg outline-none block font-semibold  cursor-pointer">
+            <form class="space-y-4">
+              <label
+                for="countries"
+                class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
+                >Price range
+              </label>
+              <select
+                id="countries"
+                class="text-[#FFFFFF] rounded-lg outline-none block font-semibold cursor-pointer"
+              >
                 <option selected>Select</option>
                 <option value="US">Select 1</option>
                 <option value="CA">Select 2</option>
@@ -186,699 +227,1404 @@
                 <option value="DE">Select 4</option>
               </select>
             </form>
-            <button type="button" class="lg:py-2.5 lg:px-5 me-2 mb-2 text-sm  font-medium text-gray-900  lg:rounded-[50px] flex items-center justify-center py-2 pl-2 rounded-full bg-[#FFDE21] hover:bg-[#a09d88b0] hover:text-[#FFDE21] "><i class="fa-solid mr-2  fa-magnifying-glass"></i><span class="lg:flex hidden">Search</span></button>
-            
-          </div>       
+            <form class="space-y-4">
+              <label
+                for="countries"
+                class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
+                >Location</label
+              >
+              <select
+                id="countries"
+                class="text-[#FFFFFF] rounded-lg outline-none block font-semibold cursor-pointer"
+              >
+                <option selected>Select</option>
+                <option value="US">Select 1</option>
+                <option value="CA">Select 2</option>
+                <option value="FR">Select 3</option>
+                <option value="DE">Select 4</option>
+              </select>
+            </form>
+            <button
+              type="button"
+              class="lg:py-2.5 lg:px-5 me-2 mb-2 text-sm font-medium text-gray-900 lg:rounded-[50px] flex items-center justify-center py-2 pl-2 rounded-full bg-[#FFDE21] hover:bg-[#a09d88b0] hover:text-[#FFDE21]"
+            >
+              <i class="fa-solid mr-2 fa-magnifying-glass"></i
+              ><span class="lg:flex hidden">Search</span>
+            </button>
+          </div>
+        </div>
+        <div class="">
+          <p class="text-[#FFFFFF] lg:text-base text-xs">
+            Take control of your future, one property at a time. <br />
+            Build your dreams, secure investments, and shape <br />
+            your world with ease and confidence.
+          </p>
+        </div>
       </div>
-      <div class="">
-        <p class="text-[#FFFFFF] lg:text-base text-xs ">Take control of your future, one property at a time. <br> Build your dreams, secure investments, and shape <br> your world with ease and confidence.</p>
-      </div>
-     </div>
     </header>
     <main class="max-w-[1320px] mx-auto">
       <!-- Features section -->
       <section class="py-[clamp(30px,2vw,80px)]">
-        <div class="md:flex md:justify-between lg:p-0 p-5 ">
-          <h2 class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)]  text-[#333333] text-playfair-display">Features Properties <span class="text-[#21C700]">property</span>
-            From <br> Around th globe </h2>
-            <p>Lorem Ipsum consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco.</p>
+        <div class="md:flex md:justify-between lg:p-0 p-5">
+          <h2
+            class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)] text-[#333333] text-playfair-display"
+          >
+            Features Properties
+            <span class="text-[#21C700]">property</span> From <br />
+            Around th globe
+          </h2>
+          <p>
+            Lorem Ipsum consectetur adipiscing elit, sed do <br />
+            eiusmod tempor incididunt ut labore et dolore <br />
+            magna aliqua. Ut enim ad minim veniam, quis <br />
+            nostrud exercitation ullamco.
+          </p>
         </div>
         <!-- care section  -->
- 
-<div class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 mt-12 overflow-x-hidden  ">        
-<!-- care-1  -->
-  <div class=" bg-white border  w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700  relative">
-    <a href="#">
-        <img class="rounded-t-lg w-full " src="image/img1.png" alt=""  />
-    </a>
-    <div class="p-4">
-       <div class="flex justify-between items-center"> 
-        <a href="#">
-        <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-    </a>
-    <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2 ">Office</button>
-    
-  </div>
-        <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-        <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-        <div class="text-[#4C4C4C] flex gap-4 mt-6">
-          <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-          <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-          <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-        </div>
-        
-    </div>
-  </div>
- <!-- card-2  -->
-  <div class=" bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-    <a href="#">
-        <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-    </a>
-    <div class="p-4">
-       <div class="flex justify-between items-center"> 
-        <a href="#">
-        <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-    </a>
-    <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2">Warehouse</button>
-  </div>
-        <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-        <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-        <div class="text-[#4C4C4C] flex gap-4 mt-6">
-          <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-          <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-          <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-        </div>
-        
-    </div>
-  </div>
-  <!-- card-3  -->
-  <div class="  bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-    <a href="#">
-        <img class="rounded-t-lg w-full" src="image/img3.png" alt="" />
-    </a>
-    <div class="p-4">
-       <div class="flex justify-between items-center"> 
-        <a href="#">
-        <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-    </a>
-    <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2">Production</button>
-  </div>
-        <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-        <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-        <div class="text-[#4C4C4C] flex gap-4 mt-6">
-          <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-          <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-          <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-        </div>
-        
-    </div>
-  </div>
-  <!-- card-4  -->
-  <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-    <a href="#">
-        <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
-    </a>
-    <div class="p-4">
-       <div class="flex justify-between items-center"> 
-        <a href="#">
-        <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-    </a>
-    <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2">button</button>
-  </div>
-        <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-        <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-        <div class="text-[#4C4C4C] flex gap-4 mt-6">
-          <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-          <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-          <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-        </div>
-        
-    </div>
-  </div>
-  <!-- card-5  -->
-  <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-    <a href="#">
-        <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-    </a>
-    <div class="p-4">
-       <div class="flex justify-between items-center"> 
-        <a href="#">
-        <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-    </a>
-    <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2">button</button>
-  </div>
-        <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-        <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-        <div class="text-[#4C4C4C] flex gap-4 mt-6">
-          <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-          <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-          <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-        </div>
-        
-    </div>
-  </div>
-  <!-- card 6 -->
-  <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-    <a href="#">
-        <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-    </a>
-    <div class="p-4">
-       <div class="flex justify-between items-center"> 
-        <a href="#">
-        <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-    </a>
-    <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2">button</button>
-  </div>
-        <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-        <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-        <div class="text-[#4C4C4C] flex gap-4 mt-6">
-          <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-          <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-          <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-        </div>
-        
-    </div>
-  </div>
-</div>
 
+        <div
+          class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 mt-12 overflow-x-hidden"
+        >
+          <!-- care-1  -->
+          <div
+            class="bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+          >
+            <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+            </a>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <a href="#">
+                  <h5
+                    class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Premium Office Space
+                  </h5>
+                </a>
+                <button
+                  class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2"
+                >
+                  Office
+                </button>
+              </div>
+              <p
+                class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+              >
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District
+              </p>
+              <p class="text-lg text-[#7F7F7F]">
+                <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                >Monthly
+              </p>
+              <div class="text-[#4C4C4C] flex gap-4 mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+            </div>
+          </div>
+          <!-- card-2  -->
+          <div
+            class="bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+          >
+            <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+            </a>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <a href="#">
+                  <h5
+                    class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Premium Office Space
+                  </h5>
+                </a>
+                <button
+                  class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2"
+                >
+                  Warehouse
+                </button>
+              </div>
+              <p
+                class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+              >
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District
+              </p>
+              <p class="text-lg text-[#7F7F7F]">
+                <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                >Monthly
+              </p>
+              <div class="text-[#4C4C4C] flex gap-4 mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+            </div>
+          </div>
+          <!-- card-3  -->
+          <div
+            class="bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+          >
+            <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img3.png" alt="" />
+            </a>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <a href="#">
+                  <h5
+                    class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Premium Office Space
+                  </h5>
+                </a>
+                <button
+                  class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2"
+                >
+                  Production
+                </button>
+              </div>
+              <p
+                class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+              >
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District
+              </p>
+              <p class="text-lg text-[#7F7F7F]">
+                <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                >Monthly
+              </p>
+              <div class="text-[#4C4C4C] flex gap-4 mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+            </div>
+          </div>
+          <!-- card-4  -->
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+          >
+            <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+            </a>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <a href="#">
+                  <h5
+                    class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Premium Office Space
+                  </h5>
+                </a>
+                <button
+                  class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2"
+                >
+                  button
+                </button>
+              </div>
+              <p
+                class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+              >
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District
+              </p>
+              <p class="text-lg text-[#7F7F7F]">
+                <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                >Monthly
+              </p>
+              <div class="text-[#4C4C4C] flex gap-4 mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+            </div>
+          </div>
+          <!-- card-5  -->
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+          >
+            <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+            </a>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <a href="#">
+                  <h5
+                    class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Premium Office Space
+                  </h5>
+                </a>
+                <button
+                  class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2"
+                >
+                  button
+                </button>
+              </div>
+              <p
+                class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+              >
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District
+              </p>
+              <p class="text-lg text-[#7F7F7F]">
+                <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                >Monthly
+              </p>
+              <div class="text-[#4C4C4C] flex gap-4 mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+            </div>
+          </div>
+          <!-- card 6 -->
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+          >
+            <a href="#">
+              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+            </a>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <a href="#">
+                  <h5
+                    class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Premium Office Space
+                  </h5>
+                </a>
+                <button
+                  class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] max-sm:absolute top-2"
+                >
+                  button
+                </button>
+              </div>
+              <p
+                class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+              >
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District
+              </p>
+              <p class="text-lg text-[#7F7F7F]">
+                <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                >Monthly
+              </p>
+              <div class="text-[#4C4C4C] flex gap-4 mt-6">
+                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- dashboard section  -->
-     <section>
-      <div class="md:flex md:justify-between  lg:p-0 p-5 ">
-        <h2 class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)]  text-[#333333] text-playfair-display">Your Trusted Real <br> Estate <span class="text-[#21C700]">Advisors</span>
-           </h2>
-          <p>Lorem Ipsum consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco.</p>
-      </div>
-      <section class="lg:flex lg:justify-between mt-14">
-        <div class="grid grid-cols-2 gap-5">
-          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl ">
-            <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333] ">50K+</h3>
-            <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">Satisfied Customer</p>
-          </div>
-          <div class="bg-[#FFDE21] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl">
-            <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">10+</h3>
-            <p class="text-[clamp(12px,4vw,20px)] text-[#333333] font-medium">Years Of Experience</p>
-          </div>
-          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl">
-            <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">112+</h3>
-            <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">Award winning</p>
-          </div>
-          <div class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl">
-            <h3 class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]">1200+</h3>
-            <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">Property Collection</p>
-          </div>
-         
+      <section>
+        <div class="md:flex md:justify-between lg:p-0 p-5">
+          <h2
+            class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)] text-[#333333] text-playfair-display"
+          >
+            Your Trusted Real <br />
+            Estate <span class="text-[#21C700]">Advisors</span>
+          </h2>
+          <p>
+            Lorem Ipsum consectetur adipiscing elit, sed do <br />
+            eiusmod tempor incididunt ut labore et dolore <br />
+            magna aliqua. Ut enim ad minim veniam, quis <br />
+            nostrud exercitation ullamco.
+          </p>
         </div>
-        <div class="flex gap-5 bg-[#0000000A] mt-5 rounded-2xl">
-          <div>
-            <p class="lg:text-base text-xs py-8 pl-5">Lorem Ipsum consectetur adipiscing <br> elit, sed do eiusmod tempor incididunt <br> ut labore et dolore magna aliqua. Ut <br> enim ad minim veniam,</p>
-           <div class="w-full h-auto">
-            <img src="image/Frame 1362790774.png" alt="">
-           </div>
+        <section class="lg:flex lg:justify-between mt-14">
+          <div class="grid grid-cols-2 gap-5">
+            <div
+              class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+            >
+              <h3
+                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+              >
+                50K+
+              </h3>
+              <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">
+                Satisfied Customer
+              </p>
+            </div>
+            <div
+              class="bg-[#FFDE21] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+            >
+              <h3
+                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+              >
+                10+
+              </h3>
+              <p class="text-[clamp(12px,4vw,20px)] text-[#333333] font-medium">
+                Years Of Experience
+              </p>
+            </div>
+            <div
+              class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+            >
+              <h3
+                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+              >
+                112+
+              </h3>
+              <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">
+                Award winning
+              </p>
+            </div>
+            <div
+              class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+            >
+              <h3
+                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+              >
+                1200+
+              </h3>
+              <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">
+                Property Collection
+              </p>
+            </div>
           </div>
-          <div class="p-4">
-            <img src="image/img5.png" alt="">
+          <div class="flex gap-5 bg-[#0000000A] mt-5 rounded-2xl">
+            <div>
+              <p class="lg:text-base text-xs py-8 pl-5">
+                Lorem Ipsum consectetur adipiscing <br />
+                elit, sed do eiusmod tempor incididunt <br />
+                ut labore et dolore magna aliqua. Ut <br />
+                enim ad minim veniam,
+              </p>
+              <div class="w-full h-auto">
+                <img src="image/Frame 1362790774.png" alt="" />
+              </div>
+            </div>
+            <div class="p-4">
+              <img src="image/img5.png" alt="" />
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="mt-20 flex gap-5">
+        <!-- filter section  -->
+        <div class="bg-[#0000000A] p-5 h-fit rounded-xl lg:flex hidden">
+          <div>
+            <div>
+              <h3 class="font-medium text-lg text-[#7F7F7F]">Filter</h3>
+
+              <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">
+                Property Type
+              </h3>
+              <ul class="text-base font-medium text-gray-900">
+                <!-- item 1 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="vue-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                    />
+                    <label
+                      for="vue-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Office Space</label
+                    >
+                  </div>
+                </li>
+                <!-- item 2 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="react-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100"
+                    />
+                    <label
+                      for="react-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Warehouse</label
+                    >
+                  </div>
+                </li>
+                <!-- item 3 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="angular-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                    />
+                    <label
+                      for="angular-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Retail Store</label
+                    >
+                  </div>
+                </li>
+                <!-- item 4 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="laravel-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                    />
+                    <label
+                      for="laravel-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Industrial</label
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <hr class="my-4" />
+            <div class="space-y-4">
+              <div>
+                <label
+                  for="small-range"
+                  class="block mb-2 text-lg font-medium text-gray-900"
+                  >Price Range</label
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="40"
+                  class="range [--range-shdw:#FFDE21] w-[290px]"
+                />
+                <p class="flex justify-between">
+                  <span>$0</span> <span>$10,000</span>
+                </p>
+              </div>
+              <div>
+                <label
+                  for="small-range"
+                  class="block mb-2 text-lg font-medium text-gray-900"
+                  >Space Size</label
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="40"
+                  class="range [--range-shdw:#FFDE21] w-[290px]"
+                />
+                <p class="flex justify-between">
+                  <span>0 m²</span> <span>1000 m²</span>
+                </p>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <div>
+              <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">
+                Amenities
+              </h3>
+              <ul class="text-base font-medium text-gray-900">
+                <!-- item 1 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="vue-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                    />
+                    <label
+                      for="vue-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Parking</label
+                    >
+                  </div>
+                </li>
+                <!-- item 2 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="react-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100"
+                    />
+                    <label
+                      for="react-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >24/7 Access</label
+                    >
+                  </div>
+                </li>
+                <!-- item 3 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="angular-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                    />
+                    <label
+                      for="angular-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Air Conditioning</label
+                    >
+                  </div>
+                </li>
+                <!-- item 4 -->
+                <li class="w-fit">
+                  <div class="flex items-center ps-3">
+                    <input
+                      id="laravel-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                    />
+                    <label
+                      for="laravel-checkbox"
+                      class="w-full py-3 ms-2 text-base font-medium text-gray-900"
+                      >Security System</label
+                    >
+                  </div>
+                </li>
+              </ul>
+              <button
+                class="btn bg-[#FFDE21] cursor-pointer w-full mt-24 rounded-full r hover:text-[#FFDE21] hover:bg-[#a09d88b0]"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- card section -->
+        <div class="w-full">
+          <div class="flex justify-between">
+            <div class="space-x-3">
+              <div class="hidden lg:flex gap-3">
+                <button class="btn">
+                  <i class="fa-solid fa-table-cells-large"></i>
+                </button>
+                <button class="btn hidden lg:flex">
+                  <i class="fa-solid fa-list"></i>
+                </button>
+              </div>
+              <button class="btn text-gray-900 p-3 hidden max-sm:flex">
+                <i class="fa-solid fa-filter"></i> Filter
+              </button>
+            </div>
+            <div class="flex gap-3">
+              <form class="">
+                <select
+                  id="countries"
+                  class="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-3"
+                >
+                  <option selected>Area Location</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
+              </form>
+              <form class="">
+                <select
+                  id="countries"
+                  class="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-3"
+                >
+                  <option selected>Sort by</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <div
+            class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 lg:mt-8"
+          >
+            <!-- care-1  -->
+            <div
+              class="bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    Office
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-2  -->
+            <div
+              class="bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    Warehouse
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-3  -->
+            <div
+              class="bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img3.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    Production
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-4  -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    button
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-5  -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    button
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card 6 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    button
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-7  -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    button
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card-8  -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    button
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+            <!-- card 9 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative"
+            >
+              <a href="#">
+                <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
+              </a>
+              <div class="p-4">
+                <div class="flex justify-between items-center">
+                  <a href="#">
+                    <h5
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Premium Office Space
+                    </h5>
+                  </a>
+                  <button
+                    class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2"
+                  >
+                    button
+                  </button>
+                </div>
+                <p
+                  class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"
+                >
+                  <i class="fa-solid fa-location-dot"></i> Central Business
+                  District
+                </p>
+                <p class="text-lg text-[#7F7F7F]">
+                  <span class="text-[#10BA6E] font-semibold">$550/M²/</span
+                  >Monthly
+                </p>
+                <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
+                  <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
+                  <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
+                  <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:flex justify-between p-5 lg:mt-8">
+            <!-- pagination section -->
+            <div class="text-[#4C4C4C] text-lg">
+              <p>Showing 1-9 off 50 Spaces</p>
+            </div>
+            <div>
+              <nav aria-label="Page navigation example">
+                <ul class="flex items-center gap-5 h-10 text-base">
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]"
+                    >
+                      <span class="sr-only">Previous</span>
+                      <svg
+                        class="w-3 h-3 rtl:rotate-180"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 1 1 5l4 4"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]"
+                      >1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]"
+                      >2</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      aria-current="page"
+                      class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]"
+                      >3</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]"
+                    >
+                      <span class="sr-only">Next</span>
+                      <svg
+                        class="w-3 h-3 rtl:rotate-180"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 9 4-4-4-4"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </section>
-     </section>
-     <section class="mt-20 flex gap-5 ">
-      <!-- filter section  -->
-     <div class="bg-[#0000000A] p-5 h-fit rounded-xl lg:flex hidden">
-      
-      <div>
+      <!-- banner section  -->
+      <section>
         <div>
-          <h3 class="font-medium text-lg text-[#7F7F7F]">Filter</h3>
-          
-<h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Property Type</h3>
-<ul class=" text-base font-medium text-gray-900">
-  <!-- item 1 -->
-    <li class=" w-fit">
-        <div class="flex items-center ps-3">
-            <input id="vue-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
-            <label for="vue-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Office Space</label>
-        </div>
-    </li>
-    <!-- item 2 -->
-    <li class="w-fit ">
-        <div class="flex items-center ps-3">
-            <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 ">
-            <label for="react-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Warehouse</label>
-        </div>
-    </li>
-    <!-- item 3 -->
-    <li class="w-fit">
-        <div class="flex items-center ps-3">
-            <input id="angular-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
-            <label for="angular-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Retail Store</label>
-        </div>
-    </li>
-    <!-- item 4 -->
-    <li class="w-fit">
-        <div class="flex items-center ps-3">
-            <input id="laravel-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
-            <label for="laravel-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Industrial</label>
-        </div>
-    </li>
-</ul>
-
-        </div>
-        <hr class="my-4">
-       <div class="space-y-4">
-        <div>
-          <label for="small-range" class="block mb-2 text-lg font-medium text-gray-900">Price Range</label>
-          <input type="range" min="0" max="100" value="40" class="range [--range-shdw:#FFDE21] w-[290px]" />
-          <p class="flex justify-between"><span>$0</span>
-            <span>$10,000</span></p>
-        </div>
-        <div>
-          <label for="small-range" class="block mb-2 text-lg font-medium text-gray-900">Space Size</label>
-          <input type="range" min="0" max="100" value="40" class="range [--range-shdw:#FFDE21] w-[290px]" />
-          <p class="flex justify-between"><span>0 m²</span>
-            <span>1000 m²</span></p>
-        </div>
-       </div>
-       <hr class="my-4">
-       <div>
-          
-        <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Amenities</h3>
-        <ul class=" text-base font-medium text-gray-900">
-          <!-- item 1 -->
-            <li class=" w-fit">
-                <div class="flex items-center ps-3">
-                    <input id="vue-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
-                    <label for="vue-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Parking</label>
-                </div>
-            </li>
-            <!-- item 2 -->
-            <li class="w-fit ">
-                <div class="flex items-center ps-3">
-                    <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 ">
-                    <label for="react-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">24/7 Access</label>
-                </div>
-            </li>
-            <!-- item 3 -->
-            <li class="w-fit">
-                <div class="flex items-center ps-3">
-                    <input id="angular-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
-                    <label for="angular-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Air Conditioning</label>
-                </div>
-            </li>
-            <!-- item 4 -->
-            <li class="w-fit">
-                <div class="flex items-center ps-3">
-                    <input id="laravel-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
-                    <label for="laravel-checkbox" class="w-full py-3 ms-2 text-base font-medium text-gray-900">Security System</label>
-                </div>
-            </li>
-        </ul>
-            <button class="btn bg-[#FFDE21]  cursor-pointer w-full mt-24 rounded-full r hover:text-[#FFDE21] hover:bg-[#a09d88b0]">Apply</button>
-                </div>
-      </div>
-     </div>
-     <!-- card section -->
-     <div class="w-full">
-      <div class="flex justify-between">
-        <div class="space-x-3">
-          <div class="hidden lg:flex gap-3">
-            <button class="btn "><i class="fa-solid  fa-table-cells-large"></i></button>
-        <button class="btn hidden lg:flex"><i class="fa-solid fa-list"></i></button>
-          </div>
-        <button class="btn  text-gray-900 p-3 hidden max-sm:flex"><i class="fa-solid fa-filter"></i> Filter</button>
-        </div>
-        <div class="flex gap-3 ">
-          <form class="">
-            
-            <select id="countries" class="bg-gray-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-3">
-              <option selected>Area Location</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
-            </select>
-          </form>
-          <form class="">
-            
-            <select id="countries" class="bg-gray-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-3">
-              <option selected>Sort by </option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
-            </select>
-          </form>
-          </div>
-      </div>
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 lg:mt-8  ">        
-      <!-- care-1  -->
-        <div class=" bg-white border  w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700  relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full " src="image/img1.png" alt=""  />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2 ">Office</button>
-          
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group "></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-       <!-- card-2  -->
-        <div class=" bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">Warehouse</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card-3  -->
-        <div class="  bg-white border w-full border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img3.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">Production</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card-4  -->
-        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card-5  -->
-        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card 6 -->
-        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card-7  -->
-        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img1.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4 cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card-8  -->
-        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-        <!-- card 9 -->
-        <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 relative">
-          <a href="#">
-              <img class="rounded-t-lg w-full" src="image/img2.png" alt="" />
-          </a>
-          <div class="p-4">
-             <div class="flex justify-between items-center"> 
-              <a href="#">
-              <h5 class="mt-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Premium Office Space</h5>
-          </a>
-          <button class="bg-[#FFDE21] rounded-[50px] text-sm py-2 px-4  cursor-pointer hover:text-[#FFDE21] hover:bg-[#a09d88b0] absolute top-2">button</button>
-        </div>
-              <p class="mb-2 font-normal text-sm text-[#4C4C4C] text-raleway dark:text-gray-400"><i class="fa-solid fa-location-dot"></i> Central Business District</p>
-              <p class="text-lg text-[#7F7F7F]"><span class="text-[#10BA6E] font-semibold">$550/M²/</span>Monthly</p>
-              <div class="text-[#4C4C4C] flex gap-3 text-xs mt-6">
-                <p><i class="fa-solid fa-people-group"></i> Up to 20</p>
-                <p><i class="fa-solid fa-person-booth"></i> 5 Room</p>
-                <p><i class="fa-solid fa-ruler-vertical"></i> 500-2000 M²</p>
-              </div>
-              
-          </div>
-        </div>
-      </div>
-      <div class="lg:flex justify-between p-5 lg:mt-8">
-        <!-- pagination section -->
-        <div class="text-[#4C4C4C] text-lg"> <p>Showing 1-9 off 50 Spaces</p></div>
-        <div>
-          <nav aria-label="Page navigation example">
-            <ul class="flex items-center  gap-5 h-10 text-base">
-              <li> 
-                <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]">
-                  <span class="sr-only">Previous</span>
-                  <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]">1</a>
-              </li>
-              <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]">2</a>
-              </li>
-              <li>
-                <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]">3</a>
-              </li>
-              
-              <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-[#000000] bg-[#E6E6E6] rounded-lg hover:bg-[#FFDE21]">
-                  <span class="sr-only">Next</span>
-                  <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-     </section>
-     <!-- banner section  -->
-      <section> 
-        <div>
-          <div class="md:flex md:justify-between lg:p-0 p-5 ">
-            <h2 class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)]  text-[#333333] text-playfair-display">International <br> <span class="text-[#21C700]">Property </span>
-              Network </h2>
-              <p>Lorem Ipsum consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore <br> magna aliqua. Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco.</p>
+          <div class="md:flex md:justify-between lg:p-0 p-5">
+            <h2
+              class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)] text-[#333333] text-playfair-display"
+            >
+              International <br />
+              <span class="text-[#21C700]">Property </span> Network
+            </h2>
+            <p>
+              Lorem Ipsum consectetur adipiscing elit, sed do <br />
+              eiusmod tempor incididunt ut labore et dolore <br />
+              magna aliqua. Ut enim ad minim veniam, quis <br />
+              nostrud exercitation ullamco.
+            </p>
           </div>
           <div class="mt-[clamp(30px,4vw,80px)]">
-            <img src="image/map.png" alt="">
+            <img src="image/map.png" alt="" />
           </div>
         </div>
       </section>
       <!-- Challenging section  -->
-       <section>
-        <div class="text-center space-y-3">
-          <h3 class="text-6xl font-semibold">Our <span class="text-[#21C700]">Customer</span> Say About us </h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div >
-       
-        <div class="flex justify-between my-8 p-10 h-80 w-full relative">
-         <span> <img class="absolute top-0 left-0 " src="image/man1.png" alt=""></span>
-         <span> <img class=" absolute bottom-32 left-44" src="image/man2.png" alt=""></span>
-         <span> <img class="absolute bottom-10 left-[352PX] " src="image/man3.png" alt=""></span>
-          <span><img class="absolute bottom-5 left-[550PX]" src="image/man4.png" alt=""></span>
-         <span> <img class=" absolute bottom-10 right-[400px]" src="image/man5.png" alt=""></span>
-         <span> <img class="absolute bottom-32 right-52 " src="image/man6.png" alt=""></span>
-          <span><img class=" absolute right-0 top-0 " src="image/man7.png" alt=""></span>
-         
-         
-          </div>
-          <div class="text-center w-[950px] py-12 px-20 bg-[#0000000A] m-auto mb-12 rounded-2xl ">
-            
-           <h3 class="font-bold text-[#21C700] text-3xl">Arlene McCoy</h3>
-           <div class="rating">
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-orange-400"
-              checked="checked" />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-          </div>
-           <p class="mt-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....</p>
+      <section class="px-4 md:px-10 lg:px-20 py-10 bg-white">
+        <!-- Section Heading -->
+        <div class="text-center space-y-3 max-w-3xl mx-auto">
+          <h3
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold"
+          >
+            Our <span class="text-[#21C700]">Customer</span> Say About Us
+          </h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s.
+          </p>
+        </div>
 
+        <!-- Avatars -->
+        <div class="flex justify-center gap-4 relative z-10 py-10">
+          <div
+            class="rounded-full border-4 border-white overflow-hidden md:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man1.png"
+              alt="Customer 1"
+              class="object-cover w-full h-full"
+            />
           </div>
-       
-       </section>
+          <div
+            class="rounded-full border-4 border-white overflow-hidden md:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man2.png"
+              alt="Customer 2"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div
+            class="rounded-full border-4 border-white overflow-hiddenmd:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man3.png"
+              alt="Customer 3"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div
+            class="rounded-full border-4 border-yellow-400 overflow-hidden md:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man4.png"
+              alt="Active Customer"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div
+            class="rounded-full border-4 border-white overflow-hidden md:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man5.png"
+              alt="Customer 5"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div
+            class="rounded-full border-4 border-white overflow-hidden md:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man6.png"
+              alt="Customer 6"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div
+            class="rounded-full border-4 border-white overflow-hidden md:w-16 md:h-16 lg:w-20 lg:h-20 w-12 h-12 shadow-lg"
+          >
+            <img
+              src="image/man7.png"
+              alt="Customer 7"
+              class="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+
+        <!-- Testimonial Box -->
+        <div
+          class="text-center bg-[#0000000A] py-10 px-6 sm:px-10 md:px-20 rounded-2xl max-w-4xl mx-auto"
+        >
+          <h3 class="font-bold text-[#21C700] text-xl sm:text-2xl md:text-3xl">
+            Arlene McCoy
+          </h3>
+
+          <!-- Rating -->
+          <div class="flex justify-center space-x-1 my-3">
+            <svg
+              class="w-5 h-5 text-orange-400 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568L24 9.75l-6 5.982L19.335 24 12 20.01 4.665 24 6 15.732 0 9.75l8.332-1.595z"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 text-orange-400 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568L24 9.75l-6 5.982L19.335 24 12 20.01 4.665 24 6 15.732 0 9.75l8.332-1.595z"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 text-orange-400 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568L24 9.75l-6 5.982L19.335 24 12 20.01 4.665 24 6 15.732 0 9.75l8.332-1.595z"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 text-orange-400 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568L24 9.75l-6 5.982L19.335 24 12 20.01 4.665 24 6 15.732 0 9.75l8.332-1.595z"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 text-orange-400 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .587l3.668 7.568L24 9.75l-6 5.982L19.335 24 12 20.01 4.665 24 6 15.732 0 9.75l8.332-1.595z"
+              />
+            </svg>
+          </div>
+
+          <!-- Testimonial Text -->
+          <p class="text-sm sm:text-base text-gray-700 leading-relaxed mt-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+        </div>
+      </section>
     </main>
-    
-      
 
-<footer class="bg-[#333333] lg:px-36 lg:py-12 dark:bg-gray-900">
-  <div class="">
-    <div class="grid grid-cols-2 space-y-5 lg:gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-      <div class="space-y-6 lg:col-span-1 col-span-2">
-          <h2><img src="image/logo.png" alt=""></h2>
-          <p class="text-[#FFFFFF] md:text-base text-xs">Meet People is a revolutionary networking platform designed to transform how professionals connect.Join us on this journey to change the way people network.</p>
-          <div class="flex gap-3">
-            <a><img class="cursor-pointer" src="image/icon/Facebook.png" alt=""></a>
-            <a><img class="cursor-pointer" src="image/icon/Reddit.png" alt=""></a>
-            <a><img class="cursor-pointer" src="image/icon/YouTube.png" alt=""></a>
-            <a><img class="cursor-pointer" src="image/icon/WhatsApp.png" alt=""></a>
-            <a><img class="cursor-pointer" src="image/icon/Pinterest.png" alt=""></a>
+    <footer class="bg-[#333333] lg:px-36 lg:py-12 dark:bg-gray-900">
+      <div class="">
+        <div
+          class="grid grid-cols-2 space-y-5 lg:gap-8 px-4 py-6 lg:py-8 md:grid-cols-4"
+        >
+          <div class="space-y-6 lg:col-span-1 col-span-2">
+            <h2><img src="image/logo.png" alt="" /></h2>
+            <p class="text-[#FFFFFF] md:text-base text-xs">
+              Meet People is a revolutionary networking platform designed to
+              transform how professionals connect.Join us on this journey to
+              change the way people network.
+            </p>
+            <div class="flex gap-3">
+              <a
+                ><img
+                  class="cursor-pointer"
+                  src="image/icon/Facebook.png"
+                  alt=""
+              /></a>
+              <a
+                ><img class="cursor-pointer" src="image/icon/Reddit.png" alt=""
+              /></a>
+              <a
+                ><img
+                  class="cursor-pointer"
+                  src="image/icon/YouTube.png"
+                  alt=""
+              /></a>
+              <a
+                ><img
+                  class="cursor-pointer"
+                  src="image/icon/WhatsApp.png"
+                  alt=""
+              /></a>
+              <a
+                ><img
+                  class="cursor-pointer"
+                  src="image/icon/Pinterest.png"
+                  alt=""
+              /></a>
+            </div>
           </div>
-      </div>
-      <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-[#FFFFFF]">Quick Links</h2>
-          <ul class="text-[#FFFFFF] font-medium">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold uppercase text-[#FFFFFF]">
+              Quick Links
+            </h2>
+            <ul class="text-[#FFFFFF] font-medium">
               <li class="mb-4">
-                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Home</a>
-              </li>
-              <li class="mb-4">
-                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Services</a>
-              </li>
-              <li class="mb-4">
-                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> About us</a>
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> Home</a
+                >
               </li>
               <li class="mb-4">
-                  <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Contact</a>
-              </li>
-          </ul>
-      </div>
-      <div>
-          <h2 class="mb-6 text-sm font-semibold text-[#FFFFFF] uppercase">Quick Links</h2>
-          <ul class="text-[#FFFFFF] font-medium">
-            <li class="mb-4">
-                <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Privacy Policy</a>
-            </li>
-            <li class="mb-4">
-                <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> Influencer Program</a>
-            </li>
-            <li class="mb-4">
-                <a href="#" class="hover:underline"><i class="fa-solid fa-angle-right"></i> FAQ</a>
-            </li>
-            
-        </ul>
-      </div>
-      <div>
-          <h2 class="mb-6 text-sm font-semibold text-[#FFFFFF] uppercase">Contact</h2>
-          <ul class="text-[#FFFFFF]  font-medium">
-              <li class="mb-4 ">
-                  <a href="#" class="hover:underline flex items-center"><i class="fa-solid mr-3 fa-location-dot"></i>PO Box CT15468 West, Finland</a>
-              </li>
-              <li class="mb-4 ">
-                  <a href="#" class="hover:underline flex items-center"><i class="fa-solid mr-3 fa-envelope"></i>HELLO@EXPERTSQUAD.NET</a>
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> Services</a
+                >
               </li>
               <li class="mb-4">
-                  <a href="#" class="hover:underline"><i class="fa-solid mr-3 fa-phone-volume"></i>91+585-656-658</a>
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> About us</a
+                >
               </li>
-              
-          </ul>
+              <li class="mb-4">
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-[#FFFFFF] uppercase">
+              Quick Links
+            </h2>
+            <ul class="text-[#FFFFFF] font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> Privacy Policy</a
+                >
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> Influencer Program</a
+                >
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid fa-angle-right"></i> FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-[#FFFFFF] uppercase">
+              Contact
+            </h2>
+            <ul class="text-[#FFFFFF] font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline flex items-center"
+                  ><i class="fa-solid mr-3 fa-location-dot"></i>PO Box CT15468
+                  West, Finland</a
+                >
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline flex items-center"
+                  ><i class="fa-solid mr-3 fa-envelope"></i
+                  >HELLO@EXPERTSQUAD.NET</a
+                >
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline"
+                  ><i class="fa-solid mr-3 fa-phone-volume"></i
+                  >91+585-656-658</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="px-4 py-6 bg-[#333333] md:flex md:items-center md:justify-between"
+        >
+          <span class="text-sm text-[#FFFFFF] dark:text-gray-300 sm:text-center"
+            >© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights
+            Reserved.
+          </span>
+          <div
+            class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse"
+          >
+            <a><img src="image/icon/Method=ApplePay.png" alt="" /></a>
+            <a><img src="image/icon/Method=Visa.png" alt="" /></a>
+            <a><img src="image/icon/Method=Mastercard.png" alt="" /></a>
+            <a><img src="image/icon/Method=Discover.png" alt="" /></a>
+            <a><img src="image/icon/Cart.png" alt="" /></a>
+          </div>
+        </div>
       </div>
-  </div>
-  <div class="px-4 py-6 bg-[#333333] md:flex md:items-center md:justify-between">
-      <span class="text-sm text-[#FFFFFF] dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
-      </span>
-      <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-          <a><img src="image/icon/Method=ApplePay.png" alt=""></a>
-          <a><img src="image/icon/Method=Visa.png" alt=""></a>
-          <a><img src="image/icon/Method=Mastercard.png" alt=""></a>
-          <a><img src="image/icon/Method=Discover.png" alt=""></a>
-          <a><img src="image/icon/Cart.png" alt=""></a>
-           
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
+    <script>
+      const toggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
 
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Optional: click outside to close
+      document.addEventListener("click", (e) => {
+        if (!toggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+      const profiles = [
+        { src: "image/user1.jpg", x: 50, y: 0 }, // top center
+        { src: "image/user2.jpg", x: 85, y: 20 }, // top right
+        { src: "image/user3.jpg", x: 100, y: 55 }, // mid right
+        { src: "image/user4.jpg", x: 85, y: 85 }, // bottom right
+        { src: "image/user5.jpg", x: 50, y: 100 }, // bottom center
+        { src: "image/user6.jpg", x: 15, y: 85 }, // bottom left
+        { src: "image/user7.jpg", x: 0, y: 55 }, // mid left
+        { src: "image/user8.jpg", x: 15, y: 20 }, // top left
+      ];
+
+      const container = document.getElementById("circle-container");
+
+      profiles.forEach((profile, index) => {
+        const img = document.createElement("img");
+        img.src = profile.src;
+        img.alt = `user-${index}`;
+        img.className = `absolute rounded-full object-cover border-4 shadow-lg testimonial-img
+          ${index === 4 ? "border-yellow-400 z-10" : "border-white"}
+          w-[clamp(50px,7vw,100px)] h-[clamp(50px,7vw,100px)]`;
+        img.style.left = `${profile.x}%`;
+        img.style.top = `${profile.y}%`;
+        img.style.transform = "translate(-50%, -50%)";
+        container.appendChild(img);
+      });
+    </script>
   </body>
 </html>
