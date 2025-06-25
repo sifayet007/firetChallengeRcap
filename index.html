@@ -62,7 +62,7 @@
     </script>
   </head>
   <body class="bg-white">
-    <header class="">
+    <header class="relative">
       <nav
         class="flex items-center justify-center fixed top-2 md:px-32 px-5 w-full z-20"
       >
@@ -178,30 +178,29 @@
             <a href="#slide1" class="btn btn-circle">❯</a>
           </div>
         </div>
-      </div>
-      <!-- content section -->
+         <!-- content section -->
       <div
-        class="md:flex w-full justify-between gap-x-5 p-5 absolute lg:bottom-24 md:bottom-3 top-0 items-center"
+        class="md:flex w-full justify-between gap-x[212px] px-[clamp(15px,2.5vw,55px)] absolute  bottom-3  items-center"
       >
-        <div class="space-y-7 lg:pl-16">
+        <div class="space-y-2">
           <h2
-            class="font-semibold lg:text-6xl text-2xl text-[#FFFFFF] text-playfair-display"
+            class="font-bold text-[clamp(1.5rem,5vw,4rem)] whitespace-nowrap text-[#FFFFFF] leading-tight"
           >
             Own Your <span class="text-[#FFDE21]">world,</span><br />
             one property at a time
           </h2>
           <div
-            class="flex lg:gap-20 gap-4 items-center bg-[#00000066] backdrop-blur-sm rounded-2xl lg:py-6 py-3 lg:px-7 px-3"
+            class="flex gap-x-[clamp(20px,2.5vw,80px)] items-center bg-[#00000066] backdrop-blur-sm rounded-2xl lg:py-6 py-3 lg:px-7 px-3"
           >
             <form class="space-y-4">
               <label
                 for="countries"
-                class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
+                class="block lg:text-base text-xs font-medium whitespace-nowrap text-[#FFFFFF] dark:text-white"
                 >Property Type</label
               >
               <select
                 id="countries"
-                class="text-[#FFFFFF] rounded-lg outline-none block font-semibold cursor-pointer"
+                class="text-[#FFFFFF] text-[clamp(12px,2.5vw,18px)] rounded-lg outline-none block font-semibold cursor-pointer"
               >
                 <option selected>Select</option>
                 <option value="US">Select 1</option>
@@ -213,12 +212,12 @@
             <form class="space-y-4">
               <label
                 for="countries"
-                class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
+                class="block whitespace-nowrap lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
                 >Price range
               </label>
               <select
                 id="countries"
-                class="text-[#FFFFFF] rounded-lg outline-none block font-semibold cursor-pointer"
+                class="text-[#FFFFFF] text-[clamp(12px,2.5vw,18px)] rounded-lg outline-none block font-semibold cursor-pointer"
               >
                 <option selected>Select</option>
                 <option value="US">Select 1</option>
@@ -230,12 +229,12 @@
             <form class="space-y-4">
               <label
                 for="countries"
-                class="block lg:text-base text-xs font-medium text-[#FFFFFF] dark:text-white"
+                class="block lg:text-base whitespace-nowrap text-xs font-medium text-[#FFFFFF] dark:text-white"
                 >Location</label
               >
               <select
                 id="countries"
-                class="text-[#FFFFFF] rounded-lg outline-none block font-semibold cursor-pointer"
+                class="text-[#FFFFFF] rounded-lg text-[clamp(12px,2.5vw,18px)] outline-none block font-semibold cursor-pointer"
               >
                 <option selected>Select</option>
                 <option value="US">Select 1</option>
@@ -253,37 +252,41 @@
             </button>
           </div>
         </div>
-        <div class="">
-          <p class="text-[#FFFFFF] lg:text-base text-xs">
+
+        <div class="md:mt-0 mt-2">
+          <p class="text-[#FFFFFF] text-[clamp(12px,2.5vw,16px)]">
             Take control of your future, one property at a time. <br />
             Build your dreams, secure investments, and shape <br />
             your world with ease and confidence.
           </p>
         </div>
       </div>
+      </div>
+     
+      </div>
     </header>
     <main class="max-w-[1320px] mx-auto">
       <!-- Features section -->
-      <section class="py-[clamp(30px,2vw,80px)]">
-        <div class="md:flex md:justify-between lg:p-0 p-5">
+      <section class="py-[clamp(30px,2vw,80px)] pt-[clamp(1.875rem,5vw,5rem)] px-5">
+        <div class="md:flex justify-between w-full gap-x-[clamp(1px,5vw,154px)] lg:p-0 ">
           <h2
-            class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)] text-[#333333] text-playfair-display"
+            class="font-semibold text-[clamp(1.25rem,3.5vw,3rem)] md:pb-0 pb-4 whitespace-nowrap text-[#333333] leading-tight w-full"
           >
             Features Properties
             <span class="text-[#21C700]">property</span> From <br />
             Around th globe
           </h2>
-          <p>
-            Lorem Ipsum consectetur adipiscing elit, sed do <br />
-            eiusmod tempor incididunt ut labore et dolore <br />
-            magna aliqua. Ut enim ad minim veniam, quis <br />
+          <p class="w-full text-[clamp(12px,2.5vw,16px)] text-[#333333]  leading-tight">
+            Lorem Ipsum consectetur adipiscing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis 
             nostrud exercitation ullamco.
           </p>
         </div>
         <!-- care section  -->
 
         <div
-          class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 mt-12 overflow-x-hidden"
+          class="grid lg:grid-cols-3 md:grid-cols-2 lg:p-0 p-5 gap-5 md:mt-12 mb-5   overflow-x-hidden"
         >
           <!-- care-1  -->
           <div
@@ -523,7 +526,7 @@
       </section>
       <!-- dashboard section  -->
       <section>
-        <div class="md:flex md:justify-between lg:p-0 p-5">
+        <div class="md:flex md:justify-between  p-5">
           <h2
             class="font-semibold lg:text-5xl text-2xl text-[clamp(24px,2vw,60px)] text-[#333333] text-playfair-display"
           >
@@ -537,13 +540,13 @@
             nostrud exercitation ullamco.
           </p>
         </div>
-        <section class="lg:flex lg:justify-between mt-14">
-          <div class="grid grid-cols-2 gap-5">
+        <section class="md:flex md:justify-between md:gap-5 md:mt-5 mt-4  p-5">
+          <div class="grid grid-cols-2 gap-5 ">
             <div
-              class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+              class="bg-[#0000000A] md:p-8 p-4 h-fit  rounded-xl"
             >
               <h3
-                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+                class="text-[clamp(30px,4vw,60px)] md:mb-7  font-semibold text-[#333333]"
               >
                 50K+
               </h3>
@@ -552,22 +555,22 @@
               </p>
             </div>
             <div
-              class="bg-[#FFDE21] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+              class="bg-[#FFDE21] md:p-8 p-4 h-fit rounded-xl"
             >
               <h3
-                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+                class="text-[clamp(30px,4vw,60px)] md:mb-7 font-semibold text-[#333333]"
               >
                 10+
               </h3>
-              <p class="text-[clamp(12px,4vw,20px)] text-[#333333] font-medium">
+              <p class="text-[clamp(12px,2vw,20px)] text-[#333333] font-medium">
                 Years Of Experience
               </p>
             </div>
             <div
-              class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+              class="bg-[#0000000A] md:p-8 p-4 h-fit rounded-xl"
             >
               <h3
-                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+                class="text-[clamp(30px,4vw,60px)] md:mb-7 font-semibold text-[#333333]"
               >
                 112+
               </h3>
@@ -576,10 +579,10 @@
               </p>
             </div>
             <div
-              class="bg-[#0000000A] lg:p-8 p-4 lg:space-y-8 space-y-3 rounded-xl"
+              class="bg-[#0000000A] md:p-8 p-4 h-fit rounded-xl"
             >
               <h3
-                class="text-[clamp(30px,4vw,60px)] font-semibold text-[#333333]"
+                class="text-[clamp(30px,4vw,60px)] md:mb-7 font-semibold text-[#333333]"
               >
                 1200+
               </h3>
@@ -588,20 +591,20 @@
               </p>
             </div>
           </div>
-          <div class="flex gap-5 bg-[#0000000A] mt-5 rounded-2xl">
+          <div class="flex gap-5 bg-[#0000000A] md:mt-0 mt-5 p-5 rounded-2xl">
             <div>
-              <p class="lg:text-base text-xs py-8 pl-5">
+              <p class="text-[clamp(10px,2.5vw,16px)]">
                 Lorem Ipsum consectetur adipiscing <br />
                 elit, sed do eiusmod tempor incididunt <br />
                 ut labore et dolore magna aliqua. Ut <br />
                 enim ad minim veniam,
               </p>
-              <div class="w-full h-auto">
-                <img src="image/Frame 1362790774.png" alt="" />
+              <div class="">
+                <img class="mt-5" src="image/Frame 1362790774.png" alt="" />
               </div>
             </div>
-            <div class="p-4">
-              <img src="image/img5.png" alt="" />
+            <div class="">
+              <img src="image/img5.png" class="w-full h-full" alt="" />
             </div>
           </div>
         </section>
@@ -1321,11 +1324,9 @@
         <!-- Avatars -->
 
         <!-- Testimonial Box -->
-        <div
-          class="bg-[#F5F6FB] pt-20 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        >
+        <div class="bg-[#F5F6FB] pt-20 pb-10 sm:px-6 lg:px-8 overflow-hidden">
           <div
-            class="relative bg-[#F5F6FB] pt-20 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
+            class="relative bg-[#F5F6FB] pt-20 pb-10 sm:px-6 lg:px-8 overflow-hidden"
           >
             <!-- Top Curved Rectangle Shape -->
             <div
@@ -1345,10 +1346,10 @@
 
             <!-- Curved Avatars -->
             <div
-              class="relative w-full flex justify-center items-start gap-x-[clamp(5px,1.5vw,80px)] gap-y-2 sm:gap-y-4 z-10"
+              class="relative w-full flex justify-center items-start gap-x-[clamp(3px,2.5vw,800px)] gap-y-2 sm:gap-y-4 z-10"
             >
               <div
-                class="rounded-full border-4 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-6 sm:-translate-y-6"
+                class="rounded-full border-2 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-6 sm:-translate-y-10"
               >
                 <img
                   src="image/man1.png"
@@ -1357,7 +1358,7 @@
                 />
               </div>
               <div
-                class="rounded-full border-4 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-3 sm:-translate-y-3"
+                class="rounded-full border-2 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-3 sm:-translate-y-3"
               >
                 <img
                   src="image/man2.png"
@@ -1366,7 +1367,7 @@
                 />
               </div>
               <div
-                class="rounded-full border-4 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-1 sm:-translate-y-1"
+                class="rounded-full border-2 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-1 sm:translate-y-3"
               >
                 <img
                   src="image/man3.png"
@@ -1375,7 +1376,7 @@
                 />
               </div>
               <div
-                class="rounded-full border-4 border-yellow-400 flex justify-center items-center overflow-hidden shadow-lg w-[clamp(45px,10vw,120px)] h-[clamp(45px,10vw,120px)]"
+                class="rounded-full border-2 border-yellow-400 flex justify-center items-center overflow-hidden shadow-lg w-[clamp(45px,10vw,120px)] h-[clamp(45px,10vw,120px)] translate-y-3"
               >
                 <img
                   src="image/man4.png"
@@ -1384,7 +1385,7 @@
                 />
               </div>
               <div
-                class="rounded-full border-4 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-1 sm:-translate-y-1"
+                class="rounded-full border-2 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-1 sm:translate-y-3"
               >
                 <img
                   src="image/man5.png"
@@ -1393,7 +1394,7 @@
                 />
               </div>
               <div
-                class="rounded-full border-4 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-3 sm:-translate-y-3"
+                class="rounded-full border-2 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-3 sm:-translate-y-3"
               >
                 <img
                   src="image/man6.png"
@@ -1402,7 +1403,7 @@
                 />
               </div>
               <div
-                class="rounded-full border-4 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-6 sm:-translate-y-6"
+                class="rounded-full border-2 border-white flex justify-center items-center overflow-hidden shadow-lg w-[clamp(35px,10vw,96px)] h-[clamp(35px,10vw,96px)] -translate-y-6 sm:-translate-y-10"
               >
                 <img
                   src="image/man7.png"
@@ -1412,10 +1413,6 @@
               </div>
             </div>
           </div>
-
-          <!-- test -->
-
-          <!-- test -->
 
           <!-- Mccoy -->
 
